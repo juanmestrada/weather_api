@@ -1,0 +1,224 @@
+@import "../bower_components/normalize-scss/_normalize.scss";
+@import "../bower_components/typeplate-starter-kit/css/_typeplate.scss";
+@import "./mixins.scss";
+
+/**
+ * BOX-SIZING
+ */
+
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+/**
+ * GRIDS
+ */
+
+.grid {
+    width: 100%;
+    display: block;
+    font-size: 0;
+    text-align: justify;
+    position: relative;
+
+    & > * {
+        font-size: medium;
+        text-align: left;
+        display: inline-block;
+        width: 100%;
+        vertical-align: top;
+    }
+
+    &:after {
+        display: inline-block;
+        width: 100%;
+        content: "";
+        font-size: medium;
+    }
+}
+
+@include gridify(2, 400);
+@include gridify(4, 600);
+
+/**
+ * PACE (automatic pre-loader thingy)
+ */
+
+.pace {
+    pointer-events: none;
+    user-select: none;
+    transition: all 1s ease;
+}
+
+.pace-inactive {
+    opacity: 0;
+}
+
+.pace-active {
+    opacity: 1;
+}
+
+.pace .pace-progress {
+    background: #2299dd;
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    right: 100%;
+    width: 100%;
+    height: 2px;
+    transition: all 1s ease;
+}
+
+/**
+ * GENERAL
+ */
+
+img {max-width:100%;}
+
+/**
+ * YOUR CODE HERE
+ */
+
+ html{
+    overflow: hidden;
+ }
+ body{
+ 
+    background-image: url(../images/stadium.jpg);
+    background-repeat: no-repeat;
+    background-size: cover; 
+   
+}
+    
+.container{
+    position: relative;
+    width: 90%;
+    min-width: 965px;
+    height: 720px;
+    margin:auto;
+}
+#image-container{
+    width: 80%;
+    height: 100%;
+    border:2px solid rgba(0,0,0,0);
+    background-image: url(../images/newiphone.png);
+    background-repeat: no-repeat;
+    background-size: cover; 
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    z-index: 50;
+
+}
+
+.weather-container{
+    width: 30%;
+    height: 60%;
+    margin-left: 45%;
+    margin-top: 20%;
+    margin-bottom: 20%;
+    background-image: url(../images/flag.jpg);
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center;
+    background-color: rgba(0,0,0, .5);
+}
+
+.main-temp{
+    height:40%;
+    background-color: rgba(0,0,0, .7);
+    color:white;
+    .iphone-bar{
+        width: 100%;
+        height:15px;
+        background-color: black;
+        .signal{
+            float: left;
+            width:5%;
+            height: 100%;
+            background-image: url(../images/signal.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+        .wifi{
+            float: left;
+            width:15%;
+            height: 100%;
+            background-image: url(../images/wifi.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+        .time{
+            float: left;
+            width:45%;
+            height: 100%;
+            margin-left: 20%;
+        }
+        .bluetooth{
+            float: left;
+            width: 5%;
+            height: 100%;
+            background-image: url(../images/bluetooth.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .battery{
+            float: left;
+            width: 10%;
+            height: 100%;
+            background-image: url(../images/battery.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+        p{
+            font-size: 10px;
+        }
+    }
+    .now{
+        width: 100%;
+        float: left;
+        p{
+            line-height: 1em;
+            margin: 0;
+        }
+    }
+    .current-temp{
+        height: 120px;
+        padding: 0 8px;
+        font-size: 82px;
+        
+    }   
+
+}
+
+.temp-days-container{
+    padding: 0 10px;
+}
+
+.temp-days{
+    height: 60%;
+    background-color: rgba(0,0,0, .7);
+    color:white;
+    margin: 0 ;
+    padding: 0 8px;
+    p{
+        border-bottom: 1px solid white;
+        margin-bottom: 23px;
+    }
+    .dayoftheweek{
+        font-size: 14px;
+        border-bottom: 1px solid rgb(145,145,145);
+        span{
+            width: 80px;
+            margin-left: 20px;
+        }
+        img{
+            width: 20px;
+            height: 20px;
+
+        }
+    }
+}
+
+ 
